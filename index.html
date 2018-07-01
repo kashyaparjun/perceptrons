@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <title>Math behind perceptrons</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Math behind perceptrons</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container" >
+        <br>
+        <br>
+        <h1>This is a post to explain the math behind perceptrons</h1>
+        <h3> - the most basic version of neural networks </h3>
+        <br>
+        <br>
+        <p>Inspired by the human brain, perceptron is a very basic implementation of the artificial nueral networks. In this post, we are going to consider a classification example to try and understand the working of the perceptrons.</p>
+        <p>Assuming that the reader has the basic understanding of how machine learning works. The basic equation for the working of perceptron is as follows:</p><br>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=f(X)&space;=&space;\left\{\begin{matrix}&space;1,&space;&&space;if&space;\&space;W.X&space;&plus;&space;b>0&space;\\&space;0,&space;&&space;otherwise&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X)&space;=&space;\left\{\begin{matrix}&space;1,&space;&&space;if&space;\&space;W.X&space;&plus;&space;b>0&space;\\&space;0,&space;&&space;otherwise&space;\end{matrix}\right." title="f(X) = \left\{\begin{matrix} 1, & if \ W.X + b>0 \\ 0, & otherwise \end{matrix}\right." /></a>
+        <br>
+        <br>
+        <p>where, f(x) is the output function on the inputs of W, X and b.</p>
+        <p>X are the feature input.</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=X&space;=&space;\begin{Bmatrix}&space;x_1,&space;&&space;x_2,&space;&&space;...,&space;&&space;x_n&space;\end{Bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X&space;=&space;\begin{Bmatrix}&space;x_1,&space;&&space;x_2,&space;&&space;...,&space;&&space;x_n&space;\end{Bmatrix}" title="X = \begin{Bmatrix} x_1, & x_2, & ..., & x_n \end{Bmatrix}" /></a>
+        <br>
+        <br>
+        <p>W are the weights.</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=W&space;=&space;\begin{Bmatrix}&space;w_0,&space;&&space;w_1,&space;&&space;...,&space;&&space;w_n&space;\end{Bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?W&space;=&space;\begin{Bmatrix}&space;w_0,&space;&&space;w_1,&space;&&space;...,&space;&&space;w_n&space;\end{Bmatrix}" title="W = \begin{Bmatrix} w_0, & w_1, & ..., & w_n \end{Bmatrix}" /></a>
+        <br>
+        <br>
+        <p>b is the bias added. It is used in cases where the input and/or weight is 0 but the output required is greater than 0. For example:</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;if&space;\&space;x&space;=&space;0,&space;\&space;w&space;=&space;0,&space;\&space;y&space;=&space;1&space;\&space;and&space;\&space;b&space;\&space;doesn't&space;\&space;exist&space;\&space;then:&space;\\&space;\\&space;y&space;=&space;w.x&space;\Rightarrow&space;y&space;=&space;0,&space;\&space;which&space;\&space;would&space;\&space;be&space;\&space;wrong.&space;\\&space;\\&space;if&space;\&space;b&space;\&space;is&space;\&space;added,&space;\&space;y&space;=&space;w.x&space;&plus;&space;b&space;\&space;and&space;\&space;when&space;\&space;b&space;=&space;1&space;\Rightarrow&space;y&space;=&space;1.&space;\\&space;\\&space;Hence,&space;bias&space;\&space;is&space;\&space;required." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;if&space;\&space;x&space;=&space;0,&space;\&space;w&space;=&space;0,&space;\&space;y&space;=&space;1&space;\&space;and&space;\&space;b&space;\&space;doesn't&space;\&space;exist&space;\&space;then:&space;\\&space;\\&space;y&space;=&space;w.x&space;\Rightarrow&space;y&space;=&space;0,&space;\&space;which&space;\&space;would&space;\&space;be&space;\&space;wrong.&space;\\&space;\\&space;if&space;\&space;b&space;\&space;is&space;\&space;added,&space;\&space;y&space;=&space;w.x&space;&plus;&space;b&space;\&space;and&space;\&space;when&space;\&space;b&space;=&space;1&space;\Rightarrow&space;y&space;=&space;1.&space;\\&space;\\&space;Hence,&space;bias&space;\&space;is&space;\&space;required." title="\\ if \ x = 0, \ w = 0, \ y = 1 \ and \ b \ doesn't \ exist \ then: \\ \\ y = w.x \Rightarrow y = 0, \ which \ would \ be \ wrong. \\ \\ if \ b \ is \ added, \ y = w.x + b \ and \ when \ b = 1 \Rightarrow y = 1. \\ \\ Hence, bias \ is \ required." /></a>
+        <br>
+        <br>
+        <p><b>Note: Perceptrons are very similar to the linear regression/classification equation of y = m.x + c</b></p>
+        <p>Lets consider an example:</p>
+        <img style="margin-left: 20%; margin-top: 10%;" src="perceptron.jpg" >
+        <br>
+        <br>
+        <img style="margin-left: 30%; margin-top: 10%;" src="inside perceptron.jpg" >
+        <br>
+        <br>
+        <p>For the sake of simplicity, we shall consider sigmoid function as the activation function. Sigmoid activation function produces an output between 0 and 1 and is ideal for binary classification.</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;Sigmoid&space;\&space;activation&space;\&space;function:&space;\\&space;f(inp)&space;=&space;\frac{1}{1&plus;e^{-inp}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;Sigmoid&space;\&space;activation&space;\&space;function:&space;\\&space;f(inp)&space;=&space;\frac{1}{1&plus;e^{-inp}}" title="\\ Sigmoid \ activation \ function: \\ f(inp) = \frac{1}{1+e^{-inp}}" /></a>
+        <br>
+        <br>
+        <p>Any neural network architecture has two propogations:</p>
+        <ul>
+            <li>Forward propogation</li>
+            <li>Backward propogation</li>
+        </ul>
+        <p>The forward propogation is much simpler compared to the backward propogation. To explain both of them, let us consider the values of x, w and b. For now, we are assuming x and w to be singular values and not arrays of values. Let x = 0.2, w = 0.5, b = 1 and y = 1</p>
+        <p>Note: In regular practices, weights i.e, w values are randomly initialised to start with. Setting w to 0 hampers the progress of the NNs. Therefore, in this example as well, we are randomly assuming the values of w to be 0.5</p>
+        <h3>Starting with forward propogation:</h3>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;comp&space;=&space;w*x&space;&plus;&space;b&space;\\&space;comp&space;=&space;0.5*0.2&space;&plus;&space;1&space;\\&space;\Rightarrow&space;comp&space;=&space;1.1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;comp&space;=&space;w*x&space;&plus;&space;b&space;\\&space;comp&space;=&space;0.5*0.2&space;&plus;&space;1&space;\\&space;\Rightarrow&space;comp&space;=&space;1.1" title="\\ comp = w*x + b \\ comp = 0.5*0.2 + 1 \\ \Rightarrow comp = 1.1" /></a>
+        <br>
+        <br>
+        <p>Now, activation function:</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;y_{pred}&space;=&space;\frac{1}{1&plus;e^{-comp}}&space;\\&space;\\&space;y_{pred}&space;=&space;\frac{1}{1&plus;e^{-1.1}}&space;\\&space;\\&space;\Rightarrow&space;y_{pred}&space;=&space;0.750260105" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;y_{pred}&space;=&space;\frac{1}{1&plus;e^{-comp}}&space;\\&space;\\&space;y_{pred}&space;=&space;\frac{1}{1&plus;e^{-1.1}}&space;\\&space;\\&space;\Rightarrow&space;y_{pred}&space;=&space;0.750260105" title="\\ y_{pred} = \frac{1}{1+e^{-comp}} \\ \\ y_{pred} = \frac{1}{1+e^{-1.1}} \\ \\ \Rightarrow y_{pred} = 0.750260105" /></a>
+        <br>
+        <br>
+        <p>y = 1 while y<sub>pred</sub> = 0.750260105. Now, we need to calculate the loss of this model inorder to fix the value of w so that we get a more accurate prediction. Again for the purpose of simplicity, we use the square error or squared deviation to calculate the loss here.</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;error&space;=&space;(y&space;-&space;y_{pred})^2&space;\\&space;\\&space;error&space;=&space;(1&space;-&space;0.750260105)^2&space;\\&space;\\&space;\Rightarrow&space;error&space;=&space;0.062370014" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;error&space;=&space;(y&space;-&space;y_{pred})^2&space;\\&space;\\&space;error&space;=&space;(1&space;-&space;0.750260105)^2&space;\\&space;\\&space;\Rightarrow&space;error&space;=&space;0.062370014" title="\\ error = (y - y_{pred})^2 \\ \\ error = (1 - 0.750260105)^2 \\ \\ \Rightarrow error = 0.062370014" /></a>
+        <br>
+        <br>
+        <h3>Now, backward propogation:</h3>
+        <p>Here, we have to make use of some calculus to generate partial derivatives.</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;we&space;\&space;need&space;\&space;to&space;\&space;calculate:&space;\\&space;\\&space;\frac{\delta&space;error}{\delta&space;w}&space;\&space;to&space;\&space;get&space;\&space;the&space;\&space;deviation&space;\&space;of&space;\&space;w." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;we&space;\&space;need&space;\&space;to&space;\&space;calculate:&space;\\&space;\\&space;\frac{\delta&space;error}{\delta&space;w}&space;\&space;to&space;\&space;get&space;\&space;the&space;\&space;deviation&space;\&space;of&space;\&space;w." title="\\ we \ need \ to \ calculate: \\ \\ \frac{\delta error}{\delta w} \ to \ get \ the \ deviation \ of \ w." /></a>
+        <br>
+        <br>
+        <p>By simple chain rule, we get:</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\frac{\delta&space;error}{\delta&space;w}&space;=&space;\frac{\delta&space;error}{\delta&space;y_{pred}}&space;*&space;\frac{\delta&space;y_{pred}}{\delta&space;comp}&space;*&space;\frac{\delta&space;comp}{\delta&space;w}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\frac{\delta&space;error}{\delta&space;w}&space;=&space;\frac{\delta&space;error}{\delta&space;y_{pred}}&space;*&space;\frac{\delta&space;y_{pred}}{\delta&space;comp}&space;*&space;\frac{\delta&space;comp}{\delta&space;w}" title="\\ \frac{\delta error}{\delta w} = \frac{\delta error}{\delta y_{pred}} * \frac{\delta y_{pred}}{\delta comp} * \frac{\delta comp}{\delta w}" /></a>
+        <br>
+        <br>
+        <img style="margin-left: 20%; margin-top: 2%;" src="back_prop.jpg" >
+        <br>
+        <br>
+        <p>Let's calculate each individual derivative:</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;error&space;=&space;(y&space;-&space;y_{pred})^2&space;\\&space;\\&space;\frac{\delta&space;error}{\delta&space;y_{pred}}&space;=&space;2*(y-y_{pred})*(0-1)&space;\\&space;\\&space;\frac{\delta&space;error}{\delta&space;y_{pred}}&space;=&space;2&space;*&space;(1-0.750260105)*(-1)&space;\\&space;\\&space;\Rightarrow&space;\frac{\delta&space;error}{\delta&space;y_{pred}}&space;=&space;-0.49947979" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;error&space;=&space;(y&space;-&space;y_{pred})^2&space;\\&space;\\&space;\frac{\delta&space;error}{\delta&space;y_{pred}}&space;=&space;2*(y-y_{pred})*(0-1)&space;\\&space;\\&space;\frac{\delta&space;error}{\delta&space;y_{pred}}&space;=&space;2&space;*&space;(1-0.750260105)*(-1)&space;\\&space;\\&space;\Rightarrow&space;\frac{\delta&space;error}{\delta&space;y_{pred}}&space;=&space;-0.49947979" title="\\ error = (y - y_{pred})^2 \\ \\ \frac{\delta error}{\delta y_{pred}} = 2*(y-y_{pred})*(0-1) \\ \\ \frac{\delta error}{\delta y_{pred}} = 2 * (1-0.750260105)*(-1) \\ \\ \Rightarrow \frac{\delta error}{\delta y_{pred}} = -0.49947979" /></a>
+        <br>
+        <br>
+        <p> The derivative of logistic function or sigmoid can be found <a href="https://en.wikipedia.org/wiki/Logistic_function#Derivative">here.</a></p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;Now,&space;\\&space;\\&space;y_{pred}&space;=&space;\frac{1}{1&plus;e^{-comp}}&space;\\&space;\\&space;\frac{\delta&space;y_{pred}}{\delta&space;comp}&space;=&space;y_{pred}*(1-y_{pred})&space;\\&space;\\&space;\frac{\delta&space;y_{pred}}{\delta&space;comp}&space;=&space;0.750260105&space;*&space;(1-0.750260105)&space;\\&space;\\&space;\Rightarrow&space;\frac{\delta&space;y_{pred}}{\delta&space;comp}&space;=&space;0.18736987984" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;Now,&space;\\&space;\\&space;y_{pred}&space;=&space;\frac{1}{1&plus;e^{-comp}}&space;\\&space;\\&space;\frac{\delta&space;y_{pred}}{\delta&space;comp}&space;=&space;y_{pred}*(1-y_{pred})&space;\\&space;\\&space;\frac{\delta&space;y_{pred}}{\delta&space;comp}&space;=&space;0.750260105&space;*&space;(1-0.750260105)&space;\\&space;\\&space;\Rightarrow&space;\frac{\delta&space;y_{pred}}{\delta&space;comp}&space;=&space;0.18736987984" title="\\ Now, \\ \\ y_{pred} = \frac{1}{1+e^{-comp}} \\ \\ \frac{\delta y_{pred}}{\delta comp} = y_{pred}*(1-y_{pred}) \\ \\ \frac{\delta y_{pred}}{\delta comp} = 0.750260105 * (1-0.750260105) \\ \\ \Rightarrow \frac{\delta y_{pred}}{\delta comp} = 0.18736987984" /></a>
+        <br>
+        <br>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;Lastly,&space;\\&space;\\&space;comp&space;=&space;w*x&space;&plus;&space;b&space;\\&space;\\&space;\frac{\delta&space;comp}{\delta&space;w}&space;=&space;x&space;\\&space;\\&space;\Rightarrow&space;\frac{\delta&space;comp}{\delta&space;w}&space;=&space;0.2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;Lastly,&space;\\&space;\\&space;comp&space;=&space;w*x&space;&plus;&space;b&space;\\&space;\\&space;\frac{\delta&space;comp}{\delta&space;w}&space;=&space;x&space;\\&space;\\&space;\Rightarrow&space;\frac{\delta&space;comp}{\delta&space;w}&space;=&space;0.2" title="\\ Lastly, \\ \\ comp = w*x + b \\ \\ \frac{\delta comp}{\delta w} = x \\ \\ \Rightarrow \frac{\delta comp}{\delta w} = 0.2" /></a>
+        <br>
+        <br>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;Finally,&space;\\&space;\\&space;\frac{\delta&space;error}{\delta&space;w}&space;=&space;-0.49947979*0.18736987984*0.2&space;\\&space;\\&space;\Rightarrow&space;\frac{\delta&space;error}{\delta&space;w}&space;=&space;-0.01871749364" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;Finally,&space;\\&space;\\&space;\frac{\delta&space;error}{\delta&space;w}&space;=&space;-0.49947979*0.18736987984*0.2&space;\\&space;\\&space;\Rightarrow&space;\frac{\delta&space;error}{\delta&space;w}&space;=&space;-0.01871749364" title="\\ Finally, \\ \\ \frac{\delta error}{\delta w} = -0.49947979*0.18736987984*0.2 \\ \\ \Rightarrow \frac{\delta error}{\delta w} = -0.01871749364" /></a>
+        <br>
+        <br>
+        <p>After we calculate the deviation of w, we need to fix the value of w using:</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;w&space;=&space;w&space;-&space;\alpha&space;\frac{\delta&space;error}{\delta&space;w}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;w&space;=&space;w&space;-&space;\alpha&space;\frac{\delta&space;error}{\delta&space;w}" title="\\ w = w - \alpha \frac{\delta error}{\delta w}" /></a>
+        <br>
+        <br>
+        <p>Where, α is the learning rate of the perceptron. In this case, we assume α = 0.1 for a slow learning pace. Then, w would be:</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;w&space;=&space;0.5-(0.1*-0.01871749364)&space;\\&space;\Rightarrow&space;w&space;=&space;0.50187174936" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;w&space;=&space;0.5-(0.1*-0.01871749364)&space;\\&space;\Rightarrow&space;w&space;=&space;0.50187174936" title="\\ w = 0.5-(0.1*-0.01871749364) \\ \Rightarrow w = 0.50187174936" /></a>
+        <br>
+        <br>
+        <p>With the new updated weight, if we do a forward propogation, we get:</p>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;comp&space;=&space;0.50187174936&space;*&space;0.2&space;&plus;&space;1&space;\\&space;\\&space;\Rightarrow&space;comp&space;=&space;1.10037434987&space;\\&space;\\&space;y_{pred}&space;=&space;\frac{1}{1&plus;e^{-1.10037434987}}&space;\\&space;\\&space;\Rightarrow&space;y_{pred}&space;=&space;0.75033024&space;\\&space;\\&space;error&space;=&space;0.062334988" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;comp&space;=&space;0.50187174936&space;*&space;0.2&space;&plus;&space;1&space;\\&space;\\&space;\Rightarrow&space;comp&space;=&space;1.10037434987&space;\\&space;\\&space;y_{pred}&space;=&space;\frac{1}{1&plus;e^{-1.10037434987}}&space;\\&space;\\&space;\Rightarrow&space;y_{pred}&space;=&space;0.75033024&space;\\&space;\\&space;error&space;=&space;0.062334988" title="\\ comp = 0.50187174936 * 0.2 + 1 \\ \\ \Rightarrow comp = 1.10037434987 \\ \\ y_{pred} = \frac{1}{1+e^{-1.10037434987}} \\ \\ \Rightarrow y_{pred} = 0.75033024 \\ \\ error = 0.062334988" /></a>
+        <br>
+        <br>
+        <p>As you can see, the error has decreased by 0.000035026</p>
+        <h4>Final results and conclusion:</h4>
+        <p>After 10 such backpropogations, we get error = 0.058421439134552285. After 100, we get error = 0.05541710835895062. After 1000, we get error = 0.035670439401619874, w = 2.2881284935495714 and y<sub>pred</sub> = 0.8398025077881307.</p>
+        <p>When learning rate is increased to 0.5, after 1000 iterations, we get error = 0.013857968380475365, w = 5.073454174765683 and y<sub>pred</sub> = 0.8822801275039963</p>
+        <p>When learning rate is 0.9 and after 1000 iterations, we get error = 0.008078951704099424, y<sub>pred</sub> = 0.9101170110415802 and w = 6.577969372118709</p> 
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+
+</html>
